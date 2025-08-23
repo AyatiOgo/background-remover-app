@@ -15,25 +15,41 @@
     <div class="w-6xl z-40 relative ml-auto mr-auto pt-10 "> 
         <div class="w-full h-full bg-white flex flex-row  justify-between pr-8 pl-8 pt-4 pb-4 rounded-full">
             <div> <img src="{% static 'img/freepng.png' %}" alt=""> </div>
-            <div class="flex flex-row gap-2"> <a href=""> <i class="bi bi-github text-2xl text-black"> </i> <p class="text-black text-2xl font-semibold">View Github</p> </a> </div>
+            <a href="https://github.com/AyatiOgo/background-remover-app" class="flex flex-row gap-2 "> <i class="bi bi-github text-2xl text-black"> </i> <p class="text-black text-2xl font-semibold">View Github</p> </a>
         </div>
     </div>
 
     <!-- content -->
-    <div class="w-6xl mr-auto mt-auto">
+    <div class="w-6xl mr-auto ml-auto h-10 z-50 relative pt-45">
 
-        <div class=" w-full flex flex-col"> 
-            
+        <div class=" w-full flex flex-col justify-center items-center h-10 relative gap-4"> 
+            <div class="text-white w-full ">
+                <h1 class="text-5xl/14 text-center font-bold ">Remove Backgrounds <br> <span class="font-light italic">Instantly 100% Free Forever </span> </h1>
+            </div>
+
+            <div>
+                <form method="post" enctype="multipart/form-data" class="text-white flex flex-col gap-4 justify-center items-center">
+                    {% csrf_token %}
+                    <input type="file" name="original_img" id="file-input" accept="image/*" class="sr-only">
+                    <label for="file-input"
+                            class="cursor-pointer bg-[#242727] text-white w-100 h-40 text-center gap-2 flex flex-col justify-center items-center rounded-lg shadow transition">
+                            <div class="w-full border-1 border-white bg-amber-50 h-full flex flex-col gap-2 items-center">
+                            <i class="bi bi-image text-2xl text-white"> </i> 
+                        drag or click to <br> upload an image
+                            </div>
+                    </label>
+                    <button type="submit" class="bg-[#BF00FF] cursor-pointer hover:bg-[#9004be] text-white px-10 py-2 rounded-full shadow-md transition">Remove Background</button>
+                </form>
+            </div>
         </div>
 
     </div>
-    <div class="z-40 relative">
-    <h1 class="text-white">Upload Form</h1>
-    <form method="post" enctype="multipart/form-data" class="text-white">
-        {% csrf_token %}
-        {{form.as_p}}
-        <button type="submit"> Submit </button>
-    </form>
-    </div>
+    <script>
+        const fileInput = document.getElementById('file-input');
+        const fileName = document.getElementById('file-name');
+        fileInput.addEventListener('change', () => {
+            fileName.textContent = fileInput.files[0] ? fileInput.files[0].name : '';
+        });
+    </script>
 </body>
 </html>
