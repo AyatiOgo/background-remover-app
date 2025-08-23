@@ -7,8 +7,10 @@
     <title>Home page</title>
     <link rel="stylesheet" href="{% static 'dist/styles.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 </head>
 <body class="bg-black relative overflow-hidden">
+
     <div> <img class="absolute z-0" src="{% static 'img/grid-lines.png' %}" alt=""></div>
 
     <!-- header -->
@@ -20,11 +22,11 @@
     </div>
 
     <!-- content -->
-    <div class="w-6xl mr-auto ml-auto h-10 z-50 relative pt-45">
+    <div class="w-6xl mr-auto ml-auto h-10 z-50 relative pt-50">
 
-        <div class=" w-full flex flex-col justify-center items-center h-10 relative gap-4"> 
+        <div class=" w-full flex flex-col justify-center items-center h-10 relative gap-8"> 
             <div class="text-white w-full ">
-                <h1 class="text-5xl/14 text-center font-bold ">Remove Backgrounds <br> <span class="font-light italic">Instantly 100% Free Forever </span> </h1>
+                <h1 class="text-5xl/14 text-center font-bold ">Remove Backgrounds <br> <span class="font-instrument italic">Instantly 100% Free Forever </span> </h1>
             </div>
 
             <div>
@@ -32,9 +34,9 @@
                     {% csrf_token %}
                     <input type="file" name="original_img" id="file-input" accept="image/*" class="sr-only">
                     <label for="file-input"
-                            class="cursor-pointer bg-[#242727] text-white w-100 h-40 text-center gap-2 flex flex-col justify-center items-center rounded-lg shadow transition">
-                            <div class="w-full border-1 border-white bg-amber-50 h-full flex flex-col gap-2 items-center">
-                            <i class="bi bi-image text-2xl text-white"> </i> 
+                            class="cursor-pointer bg-[#242727] border-1 border-[#8F9191] text-white p-4 w-100 h-50 text-center gap-2 flex flex-col justify-center items-center rounded-xl shadow transition">
+                            <div class="w-full border-1 border-[#858585]  h-full flex flex-col gap-2 items-center rounded-xl justify-center ">
+                            <img src="{% static 'img/image-icon.svg' %}" alt="img-icon">
                         drag or click to <br> upload an image
                             </div>
                     </label>
@@ -44,6 +46,9 @@
         </div>
 
     </div>
+
+
+
     <script>
         const fileInput = document.getElementById('file-input');
         const fileName = document.getElementById('file-name');
