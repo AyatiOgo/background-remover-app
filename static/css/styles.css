@@ -1,1 +1,8 @@
 @import "tailwindcss";
+
+
+
+@theme {
+  --font-display: "Oswald", sans-serif;
+  --font-custom : "Instrument Serif", serif;
+}
