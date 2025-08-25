@@ -55,16 +55,16 @@ bg-remove/
 │── requirements.txt
 │── README.md
 │
-├── bg_remove/        # Django project files
-│   ├── settings.py
-│   ├── urls.py
-│   └── ...
+├── bg_remove/ # Django project files
+│ ├── settings.py
+│ ├── urls.py
+│ └── ...
 │
-├── removerApp/        # Main app (handles uploads & background removal)
-   ├── views.py
-   ├── models.py
-   ├── templates/
-   └── static/
+├── removerApp/ # Main app (handles uploads & background removal)
+│ ├── views.py
+│ ├── models.py
+│ ├── templates/
+│ └── static/
 
 ## 📸 Screenshots
 <img width="1920" height="903" alt="Screenshot 2025-08-25 215318" src="https://github.com/user-attachments/assets/b276deb5-654a-47cf-bc86-0d815354a76a" />
